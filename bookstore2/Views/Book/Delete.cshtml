@@ -1,0 +1,43 @@
+﻿@model bookstore2.Models.Book
+
+<div> 
+	<hr/>
+	<div class="row" >
+		<form asp-action="Delete" >
+			<div asp-validation-summary="ModelOnly" class="text-danger" >  </div>
+			<div class="form-group" >
+				<label asp-for="Id" class="control-label" ></label>
+				<input asp-for="Id"readonly value="@Model.Id" class="form-control" />
+				<span asp-validation-for="Id" class="text-danger" ></span>
+			</div>	
+			<div asp-validation-summary="ModelOnly" class="text-danger" >  </div>
+			<div class="form-group" >
+				<label asp-for="Title" class="control-label" ></label>
+				<input asp-for="Title" readonly value="@Model.Title"  class="form-control" />
+				<span asp-validation-for="Title" class="text-danger" ></span>
+			</div>
+			<div class="form-group" >
+				<label asp-for="Description" class="control-label" ></label>
+				<input asp-for="Description" readonly value="@Model.Description"  class="form-control" />
+				<span asp-validation-for="Description" class="text-danger" ></span>
+			</div><div class="form-group" >
+				<label asp-for="Author.FullName" class="control-label" ></label>
+				<input asp-for="Author" readonly value="@Model.Author.FullName"  class="form-control" />
+				<span asp-validation-for="Author.FullName" class="text-danger" ></span>
+			</div>
+			<div class="form-group" >
+			<input type="submit" value="Delete" class="btn btn-danger" />
+			</div>
+
+		</form>
+
+	</div>
+	<a></a>
+</div>
+
+
+
+		
+			
+			
+

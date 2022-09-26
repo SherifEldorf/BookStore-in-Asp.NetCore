@@ -1,0 +1,83 @@
+﻿@model IEnumerable<bookstore2.Models.Book>
+@{
+	ViewData["Title"]="Inddex" ;
+}
+<table class="table" >
+	<thead>
+		<tr>
+			<td>
+			@Html.DisplayNameFor(model=>model.Id)
+			</td>
+			<td>
+		
+			@Html.DisplayNameFor(model=>model.Title)
+			</td>
+			<td>
+		
+			@Html.DisplayNameFor(model=>model.Description)
+			</td>
+			
+			
+			<td>
+		
+			Image
+			</td>
+			<td>
+		
+			@Html.DisplayNameFor(model=>model.Author.FullName)
+			</td>
+		
+
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			
+		
+		<tr>
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.Id)
+
+			</td>
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.Title)
+
+			</td>
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.Description)
+
+			</td>
+			@if( item.ImageUrl !=null)
+				{
+				<td>
+			
+				<img src="~/Uploads/@item.ImageUrl" style="width:50px;" class="img-thumbnail" >
+				</td>
+				}
+
+				
+				
+				
+
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.Author.FullName)
+
+			</td>
+			<td>
+			<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info" > Edit </a>
+			<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info" > Details </a>
+			<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" > Delete </a>
+			</td>
+
+		</tr>
+		}
+	</tbody>
+			<div> <a asp-action="Create" class="btn btn-primary" > Add New Book </a> </div>
+
+</table>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<bookstore2.Models.Author>
+@{
+	ViewData["Title"]="Inddex" ;
+}
+<table class="table" >
+	<thead>
+		<tr>
+			<td>
+			@Html.DisplayNameFor(model=>model.id)
+			</td>
+			<td>
+		
+			@Html.DisplayNameFor(model=>model.FullName)
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			
+		
+		<tr>
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.id)
+
+			</td>
+			<td>
+			
+				@Html.DisplayFor(ModelItem=>item.FullName)
+
+			</td>
+			<td>
+			<a asp-action="Edit" asp-route-id="@item.id" class="btn btn-info" > Edit </a>
+			<a asp-action="Details" asp-route-id="@item.id" class="btn btn-info" > Details </a>
+			<a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger" > Delete </a>
+			</td>
+
+		</tr>
+		}
+	</tbody>
+			<div> <a asp-action="Create" class="btn btn-primary" > Creat New Author </a> </div>
+
+</table>

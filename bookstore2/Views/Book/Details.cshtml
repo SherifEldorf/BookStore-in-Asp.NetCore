@@ -1,0 +1,62 @@
+﻿@model bookstore2.Models.Book
+@{
+	ViewData["Title"]="Details" ;
+}
+<div> 
+<dl class="dl-horizontal" > 
+	<dt>
+
+			@Html.DisplayNameFor(model=>model.Id)
+	</dt>
+	<dd>
+
+		
+			@Html.DisplayFor(model=>model.Id)
+	</dd>
+	<dt>
+
+			@Html.DisplayNameFor(model=>model.Title)
+	</dt>
+	<dd>
+
+		
+			@Html.DisplayFor(model=>model.Title)
+	</dd>
+	<dt>
+
+			@Html.DisplayNameFor(model=>model.Description)
+	</dt>
+	<dd>
+
+		
+			@Html.DisplayFor(model=>model.Description)
+	</dd>
+	<dt>
+
+			@Html.DisplayNameFor(model=>model.Author.FullName)
+	</dt>
+	<dd>
+
+		
+			@Html.DisplayFor(model=>model.Author.FullName)
+	</dd>
+	<dt>
+
+		image
+	</dt>
+	
+	<dd>
+
+		@if( Model.ImageUrl !=null)
+				{
+				<td>
+			
+				<img src="~/Uploads/@Model.ImageUrl" style="width:300px;" class="img-thumbnail" >
+				</td>
+				}
+			
+			
+	</dd>
+	</dl>
+	</div>
+

@@ -1,0 +1,36 @@
+﻿@model bookstore2.Models.Author
+@{
+	ViewData["Title"]="Details" ;
+}
+<div> 
+	<hr/>
+	<div class="row" >
+		<form asp-action="Edit" >
+			<div asp-validation-summary="ModelOnly" class="text-danger" >  </div>
+			<div class="form-group" >
+				<label asp-for="id" class="control-label" ></label>
+				<input asp-for="id"readonly value="@Model.id" class="form-control" />
+				<span asp-validation-for="id" class="text-danger" ></span>
+			</div>	
+			<div asp-validation-summary="ModelOnly" class="text-danger" >  </div>
+			<div class="form-group" >
+				<label asp-for="FullName" class="control-label" ></label>
+				<input asp-for="FullName" value="@Model.FullName"  class="form-control" />
+				<span asp-validation-for="FullName" class="text-danger" ></span>
+			</div>
+			<div class="form-group" >
+			<input type="submit" value="Edit" class="btn btn-dark" />
+			</div>
+
+		</form>
+
+	</div>
+	<a></a>
+</div>
+
+
+
+		
+			
+			
+

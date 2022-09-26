@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.css" /> 
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a  routerLink="" class="navbar-brand">Book Store </a>
+
+  <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#mnav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"  >
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link">Home</a></li>
+        <li class="nav-item"><a  class="nav-link" href="~/Author" > Authors</a></li>
+          
+        <li class="nav-item"><a  class="nav-link" href="~/Book" >Books</a></li>
+      </ul>
+      <form class="form-inline d-flex flex-nowrap" asp-action="Search"asp-controller="Book"   >
+        <input name="search_text"  type="search" class="form-control" placeholder="search">
+        <button   class="btn btn-outline-success"  >Search</button>
+      </form>
+  </div>
+
+</nav>
+    <div class="container" >
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts",required:false)
+</body>
+</html>
